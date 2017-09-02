@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Automovils</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Placa</th>
+      <th>Tipo</th>
+      <th>Color</th>
+      <th>Modelo</th>
+      <th>Cilindraje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @automovils.each do |automovil| %>
+      <tr>
+        <td><%= automovil.placa %></td>
+        <td><%= automovil.tipo %></td>
+        <td><%= automovil.color %></td>
+        <td><%= automovil.modelo %></td>
+        <td><%= automovil.cilindraje %></td>
+        <td><%= link_to 'Show', automovil %></td>
+        <td><%= link_to 'Edit', edit_automovil_path(automovil) %></td>
+        <td><%= link_to 'Destroy', automovil, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Automovil', new_automovil_path %>

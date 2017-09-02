@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902050649) do
+ActiveRecord::Schema.define(version: 20170902151244) do
+
+  create_table "automovils", force: :cascade do |t|
+    t.string "placa"
+    t.string "tipo"
+    t.string "color"
+    t.string "modelo"
+    t.integer "cilindraje"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "libros", force: :cascade do |t|
     t.string "isbn"
@@ -18,6 +28,16 @@ ActiveRecord::Schema.define(version: 20170902050649) do
     t.string "autor"
     t.string "genero"
     t.string "editoria"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pedidos", force: :cascade do |t|
+    t.string "nombre"
+    t.string "direccion"
+    t.string "producto"
+    t.integer "cantdad"
+    t.integer "valorUnitario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
